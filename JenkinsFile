@@ -1,20 +1,22 @@
-pipeline{
+pipeline {
     agent any
 
     stages {
-        stage('compile')
-        {
-            steps{
-                sh "javac ${PWD}/Main.java"
+        stage('Compile') {
+            steps {
+                script {
+                    def workspaceDir = pwd()
+                    sh "javac ${workspaceDir}/Main.java"
+                }
             }
-
         }
-        stage('run')
-        {
-            steps{
-                sh "java ${PWD}/Main"
+        stage('Run') {
+            steps {
+                script {
+                    def workspaceDir = pwd()
+                    sh "java ${workspaceDir}/Main"
+                }
             }
-
         }
     }
 }
