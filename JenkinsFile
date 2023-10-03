@@ -2,14 +2,14 @@ pipeline{
     agent any
 
     stages{
-        stage("compile")
+        stage('compile')
         {
             steps{
                 sh 'javac Main.java'
             }
 
         }
-        stage("run")
+        stage('run')
         {
             steps{
                 sh 'java Main'
