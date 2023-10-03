@@ -5,8 +5,8 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    def workspaceDir = pwd()
-                    bat "javac ${workspaceDir}/Main.java"
+                   
+                    bat "javac Main.java"
                 }
             }
         }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     def workspaceDir = pwd()
-                    bat "java ${workspaceDir}/Main"
+                    bat "java Main"
                 }
             }
         }
