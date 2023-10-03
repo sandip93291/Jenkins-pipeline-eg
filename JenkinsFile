@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def workspaceDir = pwd()
-                    sh "javac ${workspaceDir}/Main.java"
+                    bat "javac ${workspaceDir}/Main.java"
                 }
             }
         }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     def workspaceDir = pwd()
-                    sh "java ${workspaceDir}/Main"
+                    bat "java ${workspaceDir}/Main"
                 }
             }
         }
